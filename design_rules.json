@@ -1,0 +1,153 @@
+{
+  "ui_generation_prompt": {
+    "system_instructions": "You are a UI/UX designer assistant that creates modern, visually appealing user interfaces with consistent design patterns.",
+    
+    "design_system": {
+      "color_palette": {
+        "primary": {
+          "hex": "#f97316",
+          "name": "Vibrant Orange",
+          "usage": "Primary actions, highlights, active states, CTAs, accents, focus indicators"
+        },
+        "background": {
+          "hex": "#18171c",
+          "name": "Deep Dark",
+          "usage": "Main background, dark surfaces, page background"
+        },
+        "surface": {
+          "hex": "#232326",
+          "name": "Elevated Dark",
+          "usage": "Cards, elevated surfaces, secondary backgrounds, containers"
+        },
+        "text": {
+          "hex": "#ffffff",
+          "name": "Pure White",
+          "usage": "Primary text, headings, icons, high contrast content"
+        }
+      },
+      
+      "typography": {
+        "font_family": "Rajdhani",
+        "weights": [300, 400, 500, 600, 700],
+        "import_url": "https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap",
+        "hierarchy": {
+          "h1": "text-5xl md:text-7xl font-bold",
+          "h2": "text-4xl md:text-5xl font-bold",
+          "h3": "text-2xl md:text-3xl font-bold",
+          "body": "text-base md:text-lg font-normal",
+          "small": "text-sm font-normal"
+        }
+      },
+      
+      "spacing": {
+        "component_padding": "p-6",
+        "card_padding": "p-4 md:p-6",
+        "section_margin": "mb-8",
+        "element_gap": "gap-3 md:gap-4"
+      },
+      
+      "border_radius": {
+        "small": "rounded-lg",
+        "medium": "rounded-xl",
+        "large": "rounded-2xl",
+        "full": "rounded-full"
+      },
+      
+      "effects": {
+        "shadow": "shadow-lg shadow-[#f97316]/50",
+        "hover_scale": "hover:scale-105",
+        "transition": "transition-all duration-300",
+        "border_accent": "border-2 border-[#f97316]",
+        "border_subtle": "border-2 border-[#f97316]/30"
+      }
+    },
+    
+    "component_patterns": {
+      "buttons": {
+        "primary": "bg-[#f97316] text-[#18171c] font-bold px-6 py-3 rounded-lg hover:bg-[#ffffff] transition-all duration-300 hover:scale-105",
+        "secondary": "bg-[#232326] text-[#ffffff] border-2 border-[#f97316] font-bold px-6 py-3 rounded-lg hover:bg-[#f97316] hover:text-[#18171c] transition-all duration-300",
+        "ghost": "bg-transparent border-2 border-[#f97316] text-[#f97316] font-bold px-6 py-3 rounded-lg hover:bg-[#f97316] hover:text-[#18171c] transition-all duration-300"
+      },
+      
+      "cards": {
+        "basic": "bg-[#232326] rounded-xl p-6 border-2 border-[#232326] hover:border-[#f97316] transition-all duration-300",
+        "elevated": "bg-[#232326] rounded-xl p-6 border-2 border-[#f97316]/30 shadow-lg",
+        "active": "bg-[#232326] rounded-xl p-6 border-2 border-[#f97316] shadow-lg shadow-[#f97316]/50"
+      },
+      
+      "badges": {
+        "primary": "bg-[#f97316] text-[#18171c] px-3 py-1 rounded-full text-xs font-bold",
+        "secondary": "bg-[#232326] text-[#f97316] border border-[#f97316] px-3 py-1 rounded-full text-xs font-bold",
+        "outlined": "bg-transparent border-2 border-[#f97316] text-[#f97316] px-3 py-1 rounded-full text-xs font-bold"
+      },
+      
+      "inputs": {
+        "text": "bg-[#232326] text-[#ffffff] border-2 border-[#232326] focus:border-[#f97316] px-4 py-3 rounded-lg outline-none transition-all duration-300",
+        "select": "bg-[#232326] text-[#ffffff] border-2 border-[#232326] focus:border-[#f97316] px-4 py-3 rounded-lg outline-none transition-all duration-300"
+      },
+      
+      "navigation": {
+        "tab_inactive": "bg-[#232326] text-[#ffffff] px-6 py-3 rounded-lg font-semibold hover:border-[#f97316] border-2 border-transparent transition-all duration-300",
+        "tab_active": "bg-[#f97316] text-[#18171c] px-6 py-3 rounded-lg font-semibold scale-105 shadow-lg shadow-[#f97316]/50"
+      }
+    },
+    
+    "animation_guidelines": {
+      "hover_effects": "Always add hover:scale-105 for interactive elements",
+      "transitions": "Use transition-all duration-300 for smooth state changes",
+      "pulse_effect": "Use animate-pulse for loading states or active indicators",
+      "bounce_effect": "Use animate-bounce for attention-grabbing elements",
+      "fade_opacity": "Use opacity-70 or opacity-60 for secondary text"
+    },
+    
+    "layout_principles": {
+      "spacing": "Use consistent spacing with gap-3, gap-4, gap-6, or gap-8",
+      "responsive": "Always use md: breakpoint for tablet/desktop adjustments",
+      "max_width": "Use max-w-4xl, max-w-5xl, or max-w-6xl for content containers",
+      "padding": "Main containers should have p-6, cards should have p-4 md:p-6",
+      "alignment": "Center important content with mx-auto and text-center when appropriate"
+    },
+    
+    "prompt_template": "Create a [COMPONENT_TYPE] component with the following features: [FEATURES_LIST]. Use this exact color scheme: primary/accent color #f97316 (orange), main background #18171c (deep dark), card/surface background #232326 (elevated dark), and text color #ffffff (white). Use Rajdhani font family throughout. Apply modern design principles with smooth hover effects, transitions, and responsive design. Include interactive states (hover, active, focus) with the primary orange color. Add subtle animations and ensure all interactive elements scale on hover. Make it visually striking with good contrast and spacing.",
+    
+    "example_prompts": [
+      {
+        "component": "Dashboard Card",
+        "prompt": "Create a dashboard statistics card component using colors: #f97316 (primary orange), #18171c (dark background), #232326 (card background), #ffffff (white text). Use Rajdhani font. Include an icon, large number display, label text, and hover effect that adds an orange border glow. Make it modern and sleek."
+      },
+      {
+        "component": "Navigation Menu",
+        "prompt": "Design a horizontal navigation menu with tabs using: #f97316 (active state), #18171c (page background), #232326 (inactive tab background), #ffffff (text). Use Rajdhani font family. Active tabs should have orange background with scale animation. Inactive tabs should have dark background with border that appears orange on hover."
+      },
+      {
+        "component": "Hero Section",
+        "prompt": "Build an eye-catching hero section using color palette: #f97316 (accent/CTA), #18171c (background), #232326 (supporting elements), #ffffff (headings). Use Rajdhani font. Include animated elements, a bold headline, subtext, and a prominent orange CTA button with white text that scales on hover. Add gradient glows using the orange color with low opacity."
+      },
+      {
+        "component": "Form Input",
+        "prompt": "Create a modern form with input fields using: #232326 (input background), #f97316 (focus border and labels), #18171c (form background), #ffffff (text). Use Rajdhani font. Inputs should have dark backgrounds with orange borders on focus. Include smooth transitions and placeholder styling."
+      },
+      {
+        "component": "Modal Dialog",
+        "prompt": "Design a modal dialog component with colors: #232326 (modal background), #f97316 (header accent and primary button), #18171c (backdrop), #ffffff (text). Use Rajdhani font. Include a header with orange accent bar, content area, and action buttons. Primary action should be orange, secondary should be outlined in orange."
+      }
+    ],
+    
+    "usage_instructions": {
+      "for_claude": "Use the prompt_template and fill in [COMPONENT_TYPE] and [FEATURES_LIST] with your specific requirements. The color scheme and design patterns will be automatically applied.",
+      "for_other_ai": "Copy the entire design_system object and include it in your prompt along with the component description. Reference the color hexes explicitly.",
+      "for_designers": "Use the design_system as a style guide. All components should follow the specified patterns, colors, typography, and effects for consistency."
+    },
+    
+    "quick_reference": {
+      "primary_color": "#f97316",
+      "bg_dark": "#18171c",
+      "bg_surface": "#232326",
+      "text_white": "#ffffff",
+      "font": "Rajdhani",
+      "primary_button": "bg-[#f97316] text-[#18171c] hover:bg-[#ffffff]",
+      "card": "bg-[#232326] border-2 border-[#232326] hover:border-[#f97316]",
+      "transition": "transition-all duration-300 hover:scale-105"
+    }
+  }
+}
