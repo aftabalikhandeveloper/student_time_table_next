@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import { Clock, MapPin, User, CheckCircle2, Circle } from "lucide-react";
+import ClassNotificationScheduler from "./ClassNotificationScheduler";
 
 // ===== IMPORT YOUR REAL TIMETABLE DATA =====
 import { timetable } from "@/data/timetabledata" // adjust path if needed
@@ -67,8 +68,16 @@ export default function TodayClassesFlow() {
         (cls) => getClassStatus(cls.startTime, cls.endTime) === "ongoing"
     ).length;
 
+    // Prepare class data for notification scheduler
+    const classDataForNotifications = useMemo(() => {
+        return timetable[todayName]?.filter((cls): cls is NonNullable<typeof cls> => cls !== null) || [];
+    }, [todayName]);
+
     return (
         <div className="min-h-screen bg-[#18171c] p-6">
+            {/* Schedule notifications for today's classes */}
+            <ClassNotificationScheduler classes={classDataForNotifications} enabled={true} />
+            
             <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
         * {

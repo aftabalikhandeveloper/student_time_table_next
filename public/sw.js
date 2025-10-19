@@ -1,56 +1,24 @@
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
-});
+// public/sw.js
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
-});
+// "push" event fires when a push message is received (even if site is closed)
+self.addEventListener("push", (event) => {
+  if (event.data) {
+    const data = event.data.json();
 
-// Basic cache for navigation and static assets (optional/minimal)
-const CACHE = 'tt-cache-v1';
-self.addEventListener('fetch', (event) => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
-  event.respondWith(
-    caches.open(CACHE).then(async (cache) => {
-      const cached = await cache.match(req);
-      if (cached) return cached;
-      try {
-        const res = await fetch(req);
-        if (res.ok && (req.destination === 'document' || req.destination === 'style' || req.destination === 'script' || req.destination === 'image')) {
-          cache.put(req, res.clone());
-        }
-        return res;
-      } catch (e) {
-        return cached || fetch(req);
-      }
-    })
-  );
-});
-
-// Receive postMessage from page to schedule/show notifications
-self.addEventListener('message', (event) => {
-  const { type, payload } = event.data || {};
-  if (type === 'SHOW_NOTIFICATION' && payload) {
-    const { title, body, tag } = payload;
-    self.registration.showNotification(title, { body, tag, icon: '/next.svg', badge: '/vercel.svg' });
+    // Display the notification
+    event.waitUntil(
+      self.registration.showNotification(data.title, {
+        body: data.body,
+        icon: data.icon || "/icon-192x192.png", // optional icon
+        data: data.url || "/", // custom data (e.g., redirect URL)
+      })
+    );
   }
 });
 
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-  event.waitUntil(
-    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-      const url = '/today-classes';
-      for (const client of clientList) {
-        if ('focus' in client) {
-          client.navigate(url);
-          return client.focus();
-        }
-      }
-      if (self.clients.openWindow) {
-        return self.clients.openWindow(url);
-      }
-    })
-  );
+// When user clicks the notification
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close(); // close the popup
+  const url = event.notification.data; // get URL from above
+  event.waitUntil(clients.openWindow(url)); // open new tab
 });

@@ -1,9 +1,26 @@
 "use client";
 import React from 'react';
+import { useEffect } from 'react';
 import { Calendar, Clock, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { sendPush } from "@/utils/sendPush"
+
+
+
 
 export default function Home() {
+  // want to send notification on after 10 seconds of landing on page every time
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      sendPush(
+        "⏰ Reminder: Check Your Schedule!",
+        "Don't forget to review your timetable and stay organized.",
+        "/time-table"
+      )
+    }, 10000) // 10 seconds
+
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <main>
 
