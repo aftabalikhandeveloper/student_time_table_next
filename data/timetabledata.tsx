@@ -48,9 +48,7 @@ export const timetable = {
   'Sunday': [
     { time: '08:30 AM', from_to: '08:30 AM to 10:00 AM', subject: 'SE253', teacher: 'Sir Nisar Ali', room: 'EB/C-7' },
     null,
-    { time: '11:25 AM', from_to: '11:25 AM to 01:00 PM', subject: 'cs252', teacher: 'Mam Sunbal Rani', room: 'EB/D15' },
-    { time: '01:30 PM', from_to: '01:30 PM to 03:00 PM', subject: 'cs252 (Lab)', teacher: 'Sir Numan', room: 'AI Lab' },
-    { time: '03:00 PM', from_to: '03:00 PM to 04:30 PM', subject: 'cs252 (Lab)', teacher: 'Sir Numan', room: 'AI Lab' }
+    { time: '11:32 AM', from_to: '11:32 AM to 01:00 PM', subject: 'cs252', teacher: 'Mam Sunbal Rani', room: 'EB/D15' },
   ]
 
 };
