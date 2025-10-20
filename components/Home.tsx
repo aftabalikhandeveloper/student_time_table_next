@@ -1,8 +1,5 @@
 "use client"
-import React, { use } from 'react'
 import { Calendar, Clock, Sparkles } from 'lucide-react';
-import { useEffect } from 'react';
-import { sendPush } from "@/utils/sendPush"
 import Link from 'next/link';
 
 const Home = () => {

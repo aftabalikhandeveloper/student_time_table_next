@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, CalendarDays, Home as HomeIcon, TableProperties, Bell } from "lucide-react";
+import { Menu, X, CalendarDays, Home as HomeIcon, TableProperties } from "lucide-react";
 
 type NavItem = {
   label: string;
