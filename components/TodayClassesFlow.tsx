@@ -78,13 +78,7 @@ export default function TodayClassesFlow() {
             {/* Schedule notifications for today's classes */}
             <ClassNotificationScheduler classes={classDataForNotifications} enabled={true} />
             
-            <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-        * {
-          font-family: 'Rajdhani', sans-serif;
-        }
-      `}</style>
-
+         
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="mb-8">

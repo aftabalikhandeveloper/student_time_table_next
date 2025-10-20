@@ -3,7 +3,7 @@ import webpush from "web-push"
 import { getSubscription } from "../subscribe/route"
 
 webpush.setVapidDetails(
-  "mailto:your@email.com",
+  "mailto:aftabalikhan900@gmail.com",
   process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!,
   process.env.VAPID_PRIVATE_KEY!
 )
