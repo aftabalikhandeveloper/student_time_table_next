@@ -37,6 +37,7 @@ const Home = () => {
             Something
             <span className="block text-[#f97316] mt-2">Revolutionary</span>
             <span className="block text-[#ffffff] mt-2">Is Coming</span>
+             <span className="block text-[#ffffff] mt-2">from Aftab</span>
           </h1>
 
           {/* Subheading */}
